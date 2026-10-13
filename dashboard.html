@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#7F011F">
+<meta name="description" content="Customer Dashboard — StitchDoor doorstep alterations, garment repairs and personal tailoring.">
+<meta name="robots" content="noindex,nofollow">
+<meta property="og:title" content="Customer Dashboard — StitchDoor">
+<meta property="og:type" content="website">
+<title>Customer Dashboard — StitchDoor</title>
+<link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/apple-style.css">
+<link rel="stylesheet" href="assets/css/pages.css">
+<script src="assets/js/main.js" defer>
+</script>
+<script src="assets/js/data.js" defer></script>
+<script src="assets/js/pages.js" defer>
+</script>
+</head>
+<body>
+<div class="announcement">Love it longer. Alter it. Repair it. Wear it again.</div>
+<a class="skip" href="#main">Skip to content</a>
+<header>
+<a class="logo" href="index.html">StitchDoor<span>•</span>
+</a>
+<button class="menu-button" aria-label="Open navigation" aria-expanded="false">☰</button>
+<nav aria-label="Main navigation">
+<div class="nav-group">
+<button class="nav-trigger" aria-expanded="false" aria-controls="home-menu">Home ▾</button>
+<div id="home-menu" class="dropdown" hidden>
+<a href="index.html">Home 1</a>
+<a href="home-2.html">Home 2</a>
+</div>
+</div>
+<a href="services.html">Services</a>
+<a href="book-pickup.html">Book Pickup</a>
+<a href="pricing.html">Pricing</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+<div class="nav-group">
+<button class="nav-trigger" aria-expanded="false" aria-controls="more-menu">More ▾</button>
+<div id="more-menu" class="dropdown" hidden>
+<a href="how-it-works.html">How It Works</a>
+<a href="blog.html">Journal</a>
+<a href="login.html">Login</a>
+<a href="register.html">Register</a>
+<a href="dashboard.html">Customer Dashboard</a>
+<a href="coming-soon.html">Service Updates</a>
+</div>
+</div>
+<div class="tools">
+<button id="theme" aria-label="Switch color theme">◐</button>
+<button id="rtl" aria-pressed="false">RTL</button>
+</div>
+</nav>
+<a class="header-cta" href="book-pickup.html">Schedule a pickup ↗</a>
+</header>
+<main id="main">
+<section class="dashboard-shell">
+<aside class="dashboard-nav">
+<p class="eyebrow">YOUR GARMENT WORKSPACE</p>
+<h2>My StitchDoor.</h2>
+<p class="notice">Saved on this device. Requests are not confirmed bookings, and tracking does not receive live service updates.</p>
+<button data-tab="overview">Overview</button>
+<button data-tab="bookings">My Bookings</button>
+<button data-tab="tracking">Track Alterations</button>
+<button data-tab="measurements">Measurement Profile</button>
+<button data-tab="history">Garment History</button>
+<button data-tab="payments">Payments & Invoices</button>
+<button data-tab="notifications">Notifications</button>
+<button data-tab="profile">Profile Settings</button>
+<a class="button" href="book-pickup.html">Book pickup ↗</a>
+<button id="logout">Logout</button>
+</aside>
+<div class="dashboard-main">
+<section data-panel="overview">
+<h1>Your wardrobe, organised.</h1>
+<div id="dashboard-stats" class="stats-grid">
+</div>
+<h3>Recent activity</h3>
+<div id="recent-activity">
+</div>
+</section>
+<section data-panel="bookings" hidden>
+<h2>My requests</h2>
+<label>Status filter<select id="booking-filter">
+<option value="all">All requests</option>
+<option>Pickup requested</option>
+<option>Delivered</option>
+</select>
+</label>
+<div id="dashboard-bookings">
+</div>
+</section>
+<section data-panel="tracking" hidden>
+<h2>Alteration progress</h2>
+<label>Select request<select id="tracking-booking">
+</select>
+</label>
+<p>Online requests start at “Pickup requested”. Future stages need updates from the service team; this workspace does not claim live tracking.</p>
+<div id="tracking-stages">
+</div>
+</section>
+<section id="measurements" data-panel="measurements" hidden>
+<h2>Measurement profiles</h2>
+<form id="measurement-form" class="panel">
+<input type="hidden" name="id">
+<div class="form-grid">
+<label>Profile name<input name="name" required placeholder="Everyday shirt">
+</label>
+<label>Garment category<select name="category" id="measure-category">
+<option>Shirt</option>
+<option>Trousers</option>
+<option>Dress</option>
+<option>Suit</option>
+<option>Traditional wear</option>
+</select>
+</label>
+<label>Unit<select name="unit">
+<option value="cm">Centimetres</option>
+<option value="in">Inches</option>
+</select>
+</label>
+</div>
+<div id="measurement-fields" class="form-grid">
+</div>
+<label>Notes<textarea name="notes" rows="2">
+</textarea>
+</label>
+<button class="button">Save measurements</button>
+<button type="button" id="measurement-reset" class="secondary">Clear form</button>
+<p class="form-status" role="status">
+</p>
+</form>
+<div id="measurement-list">
+</div>
+</section>
+<section data-panel="history" hidden>
+<h2>Garment history</h2>
+<div id="garment-history">
+</div>
+</section>
+<section data-panel="payments" hidden>
+<h2>Payments & invoices</h2>
+<p>No payment gateway is connected. Saving a request never charges you. Below are request estimates, not tax invoices or settled payments.</p>
+<div id="payment-list">
+</div>
+</section>
+<section data-panel="notifications" hidden>
+<h2>Notifications</h2>
+<div id="notification-list">
+</div>
+</section>
+<section data-panel="profile" hidden>
+<h2>Profile settings</h2>
+<form id="profile-form" class="panel">
+<div class="form-grid">
+<label>Name<input name="name" required autocomplete="name">
+</label>
+<label>Email<input name="email" type="email" required autocomplete="email">
+</label>
+<label>Phone<input name="phone" type="tel" autocomplete="tel">
+</label>
+<label>Preferred contact<select name="preference">
+<option>Email</option>
+<option>Phone</option>
+<option>No preference</option>
+</select>
+</label>
+<label class="span-all">Saved address<textarea name="address" rows="3">
+</textarea>
+</label>
+</div>
+<button class="button">Save profile</button>
+<p class="form-status" role="status">
+</p>
+</form>
+</section>
+</div>
+</section>
+<section class="section end-cta page-cta" aria-labelledby="page-cta-heading">
+<p class="eyebrow">YOUR WORKSPACE. YOUR NEXT CHAPTER.</p>
+<h2 id="page-cta-heading">One more favourite worth keeping.</h2>
+<p class="page-cta-copy">Prepare another garment request and keep its details alongside the requests already saved in this browser.</p>
+<div class="page-cta-actions">
+<a class="button" href="book-pickup.html">Add a pickup request ↗</a>
+</div>
+</section>
+</main>
+<footer>
+<div class="footer-top">
+<div>
+<a class="logo" href="index.html">StitchDoor<span>•</span>
+</a>
+<p>More life in the clothes you love.<br>Doorstep tailoring, alterations and repairs.</p>
+</div>
+<div>
+<h3>Explore</h3>
+<a href="services.html">Services</a>
+<a href="pricing.html">Pricing guide</a>
+<a href="about.html">Our approach</a>
+<a href="blog.html">Journal</a>
+</div>
+<div>
+<h3>Your garments</h3>
+<a href="book-pickup.html">Book pickup</a>
+<a href="how-it-works.html">How it works</a>
+<a href="dashboard.html">Customer dashboard</a>
+<a href="contact.html">Contact</a>
+</div>
+<div>
+<h3>Your account</h3>
+<a href="login.html">Login</a>
+<a href="register.html">Register</a>
+<a href="coming-soon.html">Service updates</a>
+<a href="#main">Back to top ↑</a>
+</div>
+</div>
+<div class="footer-bottom">
+<span>© 2026 StitchDoor. All rights reserved.</span>
+<span>ALTER · REPAIR · REWEAR</span>
+</div>
+</footer>
+</body>
+</html>

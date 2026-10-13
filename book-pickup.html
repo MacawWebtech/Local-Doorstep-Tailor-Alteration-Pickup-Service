@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#7F011F">
+<meta name="description" content="Book a Pickup — StitchDoor doorstep alterations, garment repairs and personal tailoring.">
+<meta property="og:title" content="Book a Pickup — StitchDoor">
+<meta property="og:type" content="website">
+<title>Book a Pickup — StitchDoor</title>
+<link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/apple-style.css">
+<link rel="stylesheet" href="assets/css/pages.css">
+<script src="assets/js/main.js" defer>
+</script>
+<script src="assets/js/data.js" defer></script>
+<script src="assets/js/pages.js" defer>
+</script>
+</head>
+<body>
+<div class="announcement">Love it longer. Alter it. Repair it. Wear it again.</div>
+<a class="skip" href="#main">Skip to content</a>
+<header>
+<a class="logo" href="index.html">StitchDoor<span>•</span>
+</a>
+<button class="menu-button" aria-label="Open navigation" aria-expanded="false">☰</button>
+<nav aria-label="Main navigation">
+<div class="nav-group">
+<button class="nav-trigger" aria-expanded="false" aria-controls="home-menu">Home ▾</button>
+<div id="home-menu" class="dropdown" hidden>
+<a href="index.html">Home 1</a>
+<a href="home-2.html">Home 2</a>
+</div>
+</div>
+<a href="services.html">Services</a>
+<a href="book-pickup.html">Book Pickup</a>
+<a href="pricing.html">Pricing</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+<div class="nav-group">
+<button class="nav-trigger" aria-expanded="false" aria-controls="more-menu">More ▾</button>
+<div id="more-menu" class="dropdown" hidden>
+<a href="how-it-works.html">How It Works</a>
+<a href="blog.html">Journal</a>
+<a href="login.html">Login</a>
+<a href="register.html">Register</a>
+<a href="dashboard.html">Customer Dashboard</a>
+<a href="coming-soon.html">Service Updates</a>
+</div>
+</div>
+<div class="tools">
+<button id="theme" aria-label="Switch color theme">◐</button>
+<button id="rtl" aria-pressed="false">RTL</button>
+</div>
+</nav>
+<a class="header-cta" href="book-pickup.html">Schedule a pickup ↗</a>
+</header>
+<main id="main">
+<section class="page-banner" style="background-image:url(assets/images/background/book-pickup-heading.jpg)">
+<div>
+<p class="eyebrow">STITCHDOOR / BOOK A PICKUP</p>
+<h1>Book a Pickup</h1>
+</div>
+</section>
+<section class="section booking-shell">
+<div class="section-heading">
+<h2>One request.<br>Every garment considered.</h2>
+<p>Your request is saved in this browser. It is not a confirmed pickup; scheduling and final pricing require service-team confirmation.</p>
+</div>
+<ol class="booking-progress" aria-label="Booking steps">
+<li data-progress="0">Service</li>
+<li data-progress="1">Garments</li>
+<li data-progress="2">Measurements</li>
+<li data-progress="3">Address</li>
+<li data-progress="4">Schedule</li>
+<li data-progress="5">Review</li>
+<li data-progress="6">Saved</li>
+</ol>
+<form id="booking-form">
+<section class="booking-step" data-step="0">
+<h3>Choose your service</h3>
+<label>Service type<select name="serviceKind">
+<option>Alteration</option>
+<option>Custom stitching</option>
+<option>Repair</option>
+<option>Multiple garment services</option>
+</select>
+</label>
+<p>Choose the closest category. Add garment-specific services on the next step.</p>
+</section>
+<section class="booking-step" data-step="1" hidden>
+<h3>Your garments</h3>
+<div id="garment-list">
+</div>
+<button type="button" class="secondary" id="add-garment">+ Add another garment</button>
+</section>
+<section class="booking-step" data-step="2" hidden>
+<h3>Measurement preferences</h3>
+<label>How would you like to share measurements?<select name="measurementMode" id="measurement-mode">
+<option value="assistance">Request measurement assistance</option>
+<option value="new">Enter new measurements</option>
+<option value="saved">Use saved measurements</option>
+</select>
+</label>
+<div id="booking-measurements">
+</div>
+<label>Measurement notes<textarea name="measurementNotes" rows="3" placeholder="Reference garment, fit preferences or questions">
+</textarea>
+</label>
+</section>
+<section class="booking-step" data-step="3" hidden>
+<h3>Pickup address</h3>
+<div class="form-grid">
+<label>Customer name<input name="customer" required autocomplete="name">
+</label>
+<label>Phone number<input name="phone" required type="tel" autocomplete="tel" pattern="[0-9+ ()-]{7,20}">
+</label>
+<label class="span-all">Address<textarea name="address" required autocomplete="street-address" rows="2">
+</textarea>
+</label>
+<label>City<input name="city" required autocomplete="address-level2">
+</label>
+<label>Postal code<input name="postal" required autocomplete="postal-code" pattern="[0-9A-Za-z -]{3,10}">
+</label>
+<label class="span-all">Pickup instructions<textarea name="pickupInstructions" rows="2">
+</textarea>
+</label>
+</div>
+</section>
+<section class="booking-step" data-step="4" hidden>
+<h3>Preferred pickup window</h3>
+<p>Select your preference. These are request windows, not live availability.</p>
+<div class="form-grid">
+<label>Preferred date<input name="pickupDate" type="date" required id="pickup-date">
+</label>
+<label>Preferred time window<select name="window">
+<option>Morning: 9 am – 12 pm</option>
+<option>Afternoon: 12 pm – 4 pm</option>
+<option>Evening: 4 pm – 7 pm</option>
+</select>
+</label>
+<label class="span-all">Scheduling notes<textarea name="scheduleNotes" rows="2">
+</textarea>
+</label>
+</div>
+</section>
+<section class="booking-step" data-step="5" hidden>
+<h3>Review your request</h3>
+<div id="booking-review">
+</div>
+<p>Amounts are illustrative estimates. No payment is collected, and submitting saves the request locally.</p>
+</section>
+<section class="booking-step" data-step="6" hidden>
+<h3>Request saved in this browser</h3>
+<p id="booking-reference" role="status">
+</p>
+<p>Contact the service team separately to confirm pickup. You can find this request in your customer workspace.</p>
+<a class="button" href="dashboard.html">View my request ↗</a>
+<button type="button" class="secondary" id="download-booking">Download request</button>
+</section>
+<p id="booking-error" role="alert">
+</p>
+<div class="booking-controls">
+<button type="button" id="booking-prev" class="secondary">← Previous</button>
+<button type="button" id="booking-next" class="button">Continue →</button>
+</div>
+</form>
+</section>
+<section class="section pickup-prep" aria-labelledby="pickup-prep-heading">
+<div class="section-heading">
+<p class="eyebrow">A LITTLE PREP GOES A LONG WAY.</p>
+<h2 id="pickup-prep-heading">Make pickup day easy.</h2>
+<p>Three small details can help explain what you want for each garment. Open a card for a quick tip.</p>
+</div>
+<div class="pickup-prep-grid">
+<details class="pickup-prep-card">
+<summary><span class="pickup-prep-number" aria-hidden="true">01</span><span>Choose your pieces</span><span class="pickup-prep-plus" aria-hidden="true">+</span></summary>
+<p>Group the garments you want to alter or repair. Note the service and quantity for each piece so your request is easy to review.</p>
+</details>
+<details class="pickup-prep-card">
+<summary><span class="pickup-prep-number" aria-hidden="true">02</span><span>Share your ideal fit</span><span class="pickup-prep-plus" aria-hidden="true">+</span></summary>
+<p>A reference garment or a few fit notes can explain the shape and length you prefer. You can request measurement assistance if you are unsure.</p>
+</details>
+<details class="pickup-prep-card">
+<summary><span class="pickup-prep-number" aria-hidden="true">03</span><span>Point out the details</span><span class="pickup-prep-plus" aria-hidden="true">+</span></summary>
+<p>Mention loose fastenings, damaged seams or areas that feel too tight or too long. Put each garment’s instructions in its own request entry.</p>
+</details>
+</div>
+</section>
+<section class="section end-cta page-cta pickup-cta" aria-labelledby="page-cta-heading">
+<p class="eyebrow">YOUR GARMENT. ITS NEXT CHAPTER.</p>
+<h2 id="page-cta-heading">Ready for a better fit?</h2>
+<p class="page-cta-copy">Tell us what needs changing, share your fit preferences and choose a preferred pickup window. The service team will need to confirm the details.</p>
+<div class="page-cta-actions">
+<a class="button" href="#booking-form">Continue your pickup request ↑</a>
+<a class="secondary" href="contact.html">Ask a question ↗</a>
+</div>
+</section>
+</main>
+<footer>
+<div class="footer-top">
+<div>
+<a class="logo" href="index.html">StitchDoor<span>•</span>
+</a>
+<p>More life in the clothes you love.<br>Doorstep tailoring, alterations and repairs.</p>
+</div>
+<div>
+<h3>Explore</h3>
+<a href="services.html">Services</a>
+<a href="pricing.html">Pricing guide</a>
+<a href="about.html">Our approach</a>
+<a href="blog.html">Journal</a>
+</div>
+<div>
+<h3>Your garments</h3>
+<a href="book-pickup.html">Book pickup</a>
+<a href="how-it-works.html">How it works</a>
+<a href="dashboard.html">Customer dashboard</a>
+<a href="contact.html">Contact</a>
+</div>
+<div>
+<h3>Your account</h3>
+<a href="login.html">Login</a>
+<a href="register.html">Register</a>
+<a href="coming-soon.html">Service updates</a>
+<a href="#main">Back to top ↑</a>
+</div>
+</div>
+<div class="footer-bottom">
+<span>© 2026 StitchDoor. All rights reserved.</span>
+<span>ALTER · REPAIR · REWEAR</span>
+</div>
+</footer>
+</body>
+</html>
